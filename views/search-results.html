@@ -8,7 +8,7 @@
 <body>
   <h1>Search Results</h1>
   <ul>
-    <% movies.forEach(movie => { %>
+    ` movies.forEach(movie => { %>
       <li>
         <img src="<%= movie.Poster %>" alt="<%= movie.Title %>">
         <p><%= movie.Title %> (<%= movie.Year %>) - <%= movie.Type %></p>
@@ -20,7 +20,7 @@
           <button type="submit">Add to Favourites</button>
         </form>
       </li>
-    <% }); %>
+    <% })`;
   </ul>
 </body>
 </html>

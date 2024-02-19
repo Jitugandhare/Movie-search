@@ -3,20 +3,16 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const searchRoute = require('./routes/search');
 const favouritesRoute = require('./routes/favourites');
-const mysql=require('mysql');
 
 const app = express();
-const PORT = 3000;
+const PORT =  3000;
 
-
-
+app.set('view engine', 'ejs'); 
+app.set('views', path.join(__dirname, 'views')); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define routes
 app.use('/search', searchRoute);
 app.use('/favourites', favouritesRoute);
 
