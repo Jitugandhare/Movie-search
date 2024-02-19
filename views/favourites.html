@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourites</title>
+</head>
+<body>
+  <h1>Favourite Movies</h1>
+  <ul>
+    <% favourites.forEach(favourite => { %>
+      <li>
+        <img src="<%= favourite.poster %>" alt="<%= favourite.title %>">
+        <p><%= favourite.title %> (<%= favourite.year %>) - <%= favourite.type %></p>
+        <button class="remove-button" data-id="<%= favourite.id %>">Remove</button>
+      </li>
+    <% }); %>
+  </ul>
+  <script src="/js/favourites.js"></script>
+</body>
+</html>

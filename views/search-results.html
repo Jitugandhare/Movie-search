@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  <ul>
+    <% movies.forEach(movie => { %>
+      <li>
+        <img src="<%= movie.Poster %>" alt="<%= movie.Title %>">
+        <p><%= movie.Title %> (<%= movie.Year %>) - <%= movie.Type %></p>
+        <form action="/favourites" method="POST">
+          <input type="hidden" name="title" value="<%= movie.Title %>">
+          <input type="hidden" name="year" value="<%= movie.Year %>">
+          <input type="hidden" name="type" value="<%= movie.Type %>">
+          <input type="hidden" name="poster" value="<%= movie.Poster %>">
+          <button type="submit">Add to Favourites</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

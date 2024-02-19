@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+</head>
+<body>
+  <h1>Search for a Movie or TV Show</h1>
+  <form id="search-form" action="/search/results" method="POST">
+    <input type="text" id="search-term" name="searchTerm" placeholder="Enter search term">
+    <button type="submit">Search</button>
+  </form>
+  <div id="search-results"></div>
+  <script src="/js/search.js"></script>
+
+</body>
+</html>
